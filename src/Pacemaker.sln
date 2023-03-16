@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pacemaker", "Pacemaker.csproj", "{44ACCBE2-91A7-4690-8076-6A2569983EF2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Harmony", "..\..\Harmony\Harmony\Harmony.csproj", "{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Beta_Debug|Any CPU = Beta_Debug|Any CPU
@@ -47,30 +45,6 @@ Global
 		{44ACCBE2-91A7-4690-8076-6A2569983EF2}.Stable_Release|Any CPU.Build.0 = Stable_Release|x64
 		{44ACCBE2-91A7-4690-8076-6A2569983EF2}.Stable_Release|x64.ActiveCfg = Stable_Release|x64
 		{44ACCBE2-91A7-4690-8076-6A2569983EF2}.Stable_Release|x64.Build.0 = Stable_Release|x64
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Beta_Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Beta_Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Beta_Debug|x64.ActiveCfg = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Beta_Debug|x64.Build.0 = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Beta_Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Beta_Release|Any CPU.Build.0 = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Beta_Release|x64.ActiveCfg = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Beta_Release|x64.Build.0 = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Debug|x64.Build.0 = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Release|x64.ActiveCfg = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Release|x64.Build.0 = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Stable_Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Stable_Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Stable_Debug|x64.ActiveCfg = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Stable_Debug|x64.Build.0 = Debug|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Stable_Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Stable_Release|Any CPU.Build.0 = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Stable_Release|x64.ActiveCfg = Release|Any CPU
-		{6F2F900F-1A4F-49EA-AA63-C0F9943E7F0D}.Stable_Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -72,6 +72,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Bannerlord.MCM" Version="5.0.0" />
+    <PackageReference Include="Lib.Harmony" Version="2.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <!-- Enable NET5 Features on NET472 -->
     <PackageReference Include="IsExternalInit" Version="1.0.1">
@@ -91,10 +92,6 @@
       <HintPath>%(Identity)</HintPath>
       <Private>False</Private>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Harmony\Harmony\Harmony.csproj" />
   </ItemGroup>
 
   <ItemGroup>
