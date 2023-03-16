@@ -1,4 +1,4 @@
-﻿using TaleWorlds.CampaignSystem.SandBox.GameComponents;
+﻿using TaleWorlds.CampaignSystem.GameComponents;
 
 namespace Pacemaker.Patches
 {
@@ -8,7 +8,8 @@ namespace Pacemaker.Patches
             : base(Type.Prefix,
                    new Reflect.Getter<DefaultPregnancyModel>("PregnancyDurationInDays"),
                    new Reflect.Method<DefaultPregnancyModelPatch>(nameof(PregnancyDurationInDays)),
-                   HarmonyLib.Priority.HigherThanNormal) { }
+                   HarmonyLib.Priority.HigherThanNormal)
+        { }
 
         private static bool PregnancyDurationInDays(ref float __result)
         {

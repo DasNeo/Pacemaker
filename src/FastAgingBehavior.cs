@@ -4,7 +4,8 @@ using System;
 using System.Linq;
 
 using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.SandBox.CampaignBehaviors;
+using TaleWorlds.CampaignSystem.CampaignBehaviors;
+using TaleWorlds.CampaignSystem.Extensions;
 using TaleWorlds.Core;
 
 namespace Pacemaker
@@ -29,7 +30,6 @@ namespace Pacemaker
         private void OnSessionLaunched(CampaignGameStarter starter)
         {
             var agingBehavior = Campaign.Current.CampaignBehaviorManager.GetBehavior<AgingCampaignBehavior>();
-            UpdateHeroDeathProbabilities = UpdateHeroDeathProbabilitiesRM.GetDelegate<UpdateHeroDeathProbabilitiesDelegate>(agingBehavior);
 
             // Save these for later:
             adultAge = Campaign.Current.Models.AgeModel.HeroComesOfAge;
@@ -44,8 +44,6 @@ namespace Pacemaker
 
             if (CampaignOptions.IsLifeDeathCycleDisabled)
                 return;
-
-            PeriodicDeathProbabilityUpdate(adultAafEnabled);
 
             /* Send childhood growth stage transition events & perform AAF if enabled */
 
@@ -106,18 +104,6 @@ namespace Pacemaker
             }
         }
 
-        private void PeriodicDeathProbabilityUpdate(bool aafEnabled)
-        {
-            int daysElapsed = (int)Campaign.Current.CampaignStartTime.ElapsedDaysUntilNow;
-            int updatePeriod = Math.Max(1, !aafEnabled
-                ? Main.TimeParam.DayPerYear
-                : (int)(Main.TimeParam.DayPerYear / Main.Settings!.AdultAgeFactor)); // Only adults have valid death probabilities
-
-            // Globally update death probabilities every year of accumulated age
-            if (daysElapsed % updatePeriod == 0)
-                UpdateHeroDeathProbabilities!();
-        }
-
         private void ChildhoodSkillGrowth(Hero child)
         {
             var skill = Skills.All
@@ -176,7 +162,6 @@ namespace Pacemaker
         private readonly OnHeroGrowsOutOfInfancyDelegate OnHeroGrowsOutOfInfancy;
 
         // Reflection for triggering campaign events & death probability updates & childhood education stage processing:
-        private static readonly Reflect.Method<AgingCampaignBehavior> UpdateHeroDeathProbabilitiesRM = new("UpdateHeroDeathProbabilities");
         private static readonly Reflect.Method<CampaignEventDispatcher> OnHeroComesOfAgeRM = new("OnHeroComesOfAge");
         private static readonly Reflect.Method<CampaignEventDispatcher> OnHeroReachesTeenAgeRM = new("OnHeroReachesTeenAge");
         private static readonly Reflect.Method<CampaignEventDispatcher> OnHeroGrowsOutOfInfancyRM = new("OnHeroGrowsOutOfInfancy");

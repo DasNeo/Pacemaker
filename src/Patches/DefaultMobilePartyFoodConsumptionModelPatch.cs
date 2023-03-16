@@ -1,5 +1,6 @@
 ﻿using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.SandBox.GameComponents.Map;
+using TaleWorlds.CampaignSystem.GameComponents;
+using TaleWorlds.CampaignSystem.Party;
 using TaleWorlds.Localization;
 
 namespace Pacemaker.Patches
@@ -13,10 +14,8 @@ namespace Pacemaker.Patches
         private static readonly Reflect.Method<DefaultMobilePartyFoodConsumptionModelPatch> PatchMethod = new(nameof(CalculateDailyFoodConsumptionf));
         private static readonly TextObject Explanation = new($"[{Main.DisplayName}] Time Multiplier");
 
-        private static void CalculateDailyFoodConsumptionf(MobileParty party, bool includeDescription, ref ExplainedNumber __result)
+        private static void CalculateDailyFoodConsumptionf(MobileParty party, ref ExplainedNumber __result)
         {
-            _ = (party, includeDescription);
-
             if (!Main.Settings!.EnableFoodTweaks)
                 return;
 

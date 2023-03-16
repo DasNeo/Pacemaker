@@ -59,7 +59,7 @@ namespace Pacemaker
                 Util.Log.ToFile($"Applying: {patch}");
                 patch.Apply(harmony);
             }
-
+            //var prop = typeof(CampaignTime).GetProperty("GetYear", System.Reflection.BindingFlags.Public);
             Util.Log.ToFile("\nApplying standard Harmony patches in bulk...");
             harmony.PatchAll();
             Util.Log.ToFile("Done.");

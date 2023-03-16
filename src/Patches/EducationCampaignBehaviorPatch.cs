@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.CampaignSystem.CampaignBehaviors;
 
 namespace Pacemaker.Patches
 {

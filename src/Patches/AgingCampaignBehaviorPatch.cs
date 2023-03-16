@@ -6,7 +6,7 @@ using HarmonyLib;
 
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.Actions;
-using TaleWorlds.CampaignSystem.SandBox.CampaignBehaviors;
+using TaleWorlds.CampaignSystem.CampaignBehaviors;
 
 namespace Pacemaker.Patches
 {
@@ -15,18 +15,12 @@ namespace Pacemaker.Patches
     {
         internal static class ForOptimizer
         {
-            internal static void WeeklyTick() => AgingCampaignBehaviorPatch.WeeklyTick();
             internal static void DailyTickHero() => AgingCampaignBehaviorPatch.DailyTickHero(null!, null!, null!, null!);
         }
 
         private delegate void IsItTimeOfDeathDelegate(AgingCampaignBehavior instance, Hero hero);
         private static readonly Reflect.Method<AgingCampaignBehavior> IsItTimeOfDeathRM = new("IsItTimeOfDeath");
         private static readonly IsItTimeOfDeathDelegate IsItTimeOfDeath = IsItTimeOfDeathRM.GetOpenDelegate<IsItTimeOfDeathDelegate>();
-
-        [HarmonyPrefix]
-        [HarmonyPatch("WeeklyTick")]
-        [MethodImpl(MethodImplOptions.NoOptimization)]
-        private static bool WeeklyTick() => false; // Disabled, as its work is now triggered by FastAgingBehavior.OnDailyTick()
 
         [HarmonyPrefix]
         [HarmonyPriority(Priority.High)]
@@ -43,7 +37,7 @@ namespace Pacemaker.Patches
             if (CampaignOptions.IsLifeDeathCycleDisabled)
                 return false;
 
-            if (hero.IsAlive && hero.CanDie())
+            if (hero.IsAlive && hero.CanDie(KillCharacterAction.KillCharacterActionDetail.DiedOfOldAge))
             {
                 if (hero.DeathMark != KillCharacterAction.KillCharacterActionDetail.None
                     && (hero.PartyBelongedTo is null

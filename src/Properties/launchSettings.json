@@ -2,9 +2,9 @@
   "profiles": {
     "Start": {
       "commandName": "Executable",
-      "executablePath": "$(GameFolder)\\bin\\Win64_Shipping_Client\\Bannerlord.exe",
-      "commandLineArgs": "/singleplayer _MODULES_*Bannerlord.Harmony*Bannerlord.ButterLib*Bannerlord.UIExtenderEx*Bannerlord.MBOptionScreen*Native*SandBoxCore*SandBox*StoryMode*CustomBattle*Pacemaker*_MODULES_",
-      "workingDirectory": "$(GameFolder)\\bin\\Win64_Shipping_Client"
+      "executablePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount & Blade II Bannerlord\\bin\\Win64_Shipping_Client\\Bannerlord.exe",
+      "commandLineArgs": "/singleplayer _MODULES_*Bannerlord.Harmony*Bannerlord.ButterLib*Bannerlord.UIExtenderEx*Bannerlord.MBOptionScreen*Native*SandBoxCore*Sandbox*StoryMode*CustomBattle*Pacemaker*_MODULES_",
+      "workingDirectory": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Mount & Blade II Bannerlord\\bin\\Win64_Shipping_Client"
     },
     "QuickStart": {
       "commandName": "Executable",
